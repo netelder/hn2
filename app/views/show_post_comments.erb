@@ -1,0 +1,15 @@
+
+<div class="container">
+
+  <div id="post_title"> <%= @post.title %> </div>
+  <form name="add comments" action="/comments" method='POST'>
+    <input type="hidden" value ="<%=@post.id%>" name="post_id">
+    <textarea row="6" col="40" placeholder="add comment" name="body"></textarea>
+    <input type="submit">
+  </form>
+
+  <% @comments.each do |comment| %>
+    <div id="comment_body"><%= comment.body%></div>
+    <div id="comment_user"><%= comment.user.username%></div>
+  <% end %>
+</div>

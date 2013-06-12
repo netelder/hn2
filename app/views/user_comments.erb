@@ -1,0 +1,8 @@
+<div class="container">
+
+
+  <% @comments.each do |comment| %>
+    <div id="comment_body"><%= comment.body%></div>
+    <div id="comment_post"><a href='/posts/<%=comment.post.id%>'><%= comment.post.title%></a></div>
+  <% end %>
+</div>

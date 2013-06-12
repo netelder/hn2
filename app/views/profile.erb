@@ -1,0 +1,26 @@
+<div class="container">
+
+<table id="profile">
+  <tr id="username">
+    <td>user:</td>
+    <td><%=@user.username%></td>
+  </tr>
+  <tr id="created">
+    <td>created:</td>
+    <td><%=@user.created_at%></td>
+  </tr> 
+  <tr id="email">
+    <td>email:</td>
+    <td><%=@user.email%></td>
+  </tr>
+  <tr id="posts">
+    <td>posts</td>
+    <td><a href="/users/posts/<%=@user.id%>">posts</a></td>
+  </tr>
+  <tr id="comments">
+    <td>comments</td>
+    <td><a href="/users/comments/<%=@user.id%>">comments</a></td>
+  </tr>
+
+</table>
+</div>

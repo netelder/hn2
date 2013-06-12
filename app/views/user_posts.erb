@@ -1,0 +1,9 @@
+<div class="container">
+
+  <% @posts.each do |post| %>
+    <div id="post_title"><%= post.title%></div>
+    <div id="post_url"><%= post.url%></div>
+    <div id="post_user"><%= post.user%></div>
+    <div id="post_comments"><a href="/posts/<%=post.id%>">Comments</a></div>
+  <% end %>
+</div>

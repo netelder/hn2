@@ -4,16 +4,16 @@ get '/comments' do
 end
 
 post '/comments/vote/:comment_id' do
-  user = current_user
   comment = Comment.find(params[:comment_id])
-  unless CommentVote.find_by_user_id_and_comment_id(user.id, params[:comment_id])
-    comment.score += 1
-    CommentVote.create(:user_id => user.id, :comment_id => params[:comment_id])
-    comment.save
+  if logged_in?
+    user = current_user
+    unless CommentVote.find_by_user_id_and_comment_id(user.id, params[:comment_id])
+      comment.score += 1
+      CommentVote.create(:user_id => user.id, :comment_id => params[:comment_id])
+      comment.save
+    end 
   end
-    p comment.score
   comment.score.to_s
-
 end
 
 post '/comments' do

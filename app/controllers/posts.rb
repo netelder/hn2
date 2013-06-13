@@ -13,12 +13,14 @@ get '/posts/:id' do
 end
 
 post '/posts/vote/:post_id' do
-  user = current_user
   post = Post.find(params[:post_id])
-  unless PostVote.find_by_user_id_and_post_id(user.id, params[:post_id])
-    post.score += 1
-    PostVote.create(:user_id => user.id, :post_id => params[:post_id])
-    post.save
+  if logged_in?
+    user = current_user
+    unless PostVote.find_by_user_id_and_post_id(user.id, params[:post_id])
+      post.score += 1
+      PostVote.create(:user_id => user.id, :post_id => params[:post_id])
+      post.save
+    end
   end
   post.score.to_s
 end

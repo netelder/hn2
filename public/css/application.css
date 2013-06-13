@@ -11,3 +11,25 @@ th {
 nav div{
   display: inline;
 }
+
+.post_upvote{
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  cursor: pointer;
+}
+
+.post_upvote:hover{
+  background-color: green;
+}
+
+.comment_upvote{
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  cursor: pointer;
+}
+
+.comment_upvote:hover{
+  background-color: orange;
+}

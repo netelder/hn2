@@ -3,8 +3,10 @@
 
   <% @posts.each do |post| %>
     <div id="post_title"><%= post.title%></div>
-    <div id="post_url"><%= post.url%></div>
-    <div id="post_user"><%= post.user%></div>
+    <div class="post_upvote" value=<%= post.id %>></div>
+    <div id="post_score"><%= post.score%></div>
+    <div id="post_url"><a href="http://<%= post.url%>"><%= post.url%></a></div>
+    <div id="post_user"><%= post.user.username%></div>
     <div id="post_comments"><a href="/posts/<%=post.id%>">Comments</a></div>
   <% end %>
 </div>

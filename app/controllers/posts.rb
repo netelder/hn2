@@ -12,6 +12,17 @@ get '/posts/:id' do
   erb :show_post_comments #also allows for adding comment?
 end
 
+post '/posts/vote/:post_id' do
+  user = current_user
+  post = Post.find(params[:post_id])
+  unless PostVote.find_by_user_id_and_post_id(user.id, params[:post_id])
+    post.score += 1
+    PostVote.create(:user_id => user.id, :post_id => params[:post_id])
+    post.save
+  end
+  post.score.to_s
+end
+
 post '/posts/:id' do
 
   redirect '/'
@@ -22,6 +33,8 @@ post '/posts' do
   @post.user = current_user
   @post.save
   redirect "/posts/#{@post.id}"
-
 end
+
+
+
 

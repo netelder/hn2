@@ -2,6 +2,8 @@
 
 
   <% @comments.each do |comment| %>
+    <div class="comment_upvote" value="<%=comment.id%>"></div>
+    <div id="comment_score"><%= comment.score%></div>
     <div id="comment_body"><%= comment.body%></div>
     <div id="comment_post"><a href='/posts/<%=comment.post.id%>'><%= comment.post.title%></a></div>
   <% end %>

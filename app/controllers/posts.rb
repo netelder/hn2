@@ -8,7 +8,7 @@ end
 
 get '/posts/:id' do
   @post=Post.find(params[:id])
-  p @comments = Comment.where("post_id = ?", @post.id)
+  @comments = Comment.where("post_id = ?", @post.id)
   erb :show_post_comments #also allows for adding comment?
 end
 

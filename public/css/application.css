@@ -2,14 +2,35 @@
   margin: 20px auto;
   width: 600px;
   padding: 0 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px dotted gray;
+  border-radius: 5px;
 }
 th {
   text-align: left;
 }
 
+nav {
+  height: 40px;
+  background-color: #B8FFDB;
+
+}
 nav div{
   display: inline;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+nav a:link{
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: green;
+  text-decoration: none;
+}
+
+#logout, #username {
+  float: right;
 }
 
 .post_upvote{
@@ -17,6 +38,7 @@ nav div{
   height: 20px;
   background-color: #666;
   cursor: pointer;
+  margin: 0;
 }
 
 .post_upvote:hover{
@@ -32,4 +54,24 @@ nav div{
 
 .comment_upvote:hover{
   background-color: orange;
+}
+
+body {
+  background-color: beige;
+}
+
+#comment_post {
+  font-style: italic;
+  font-size: 120%;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #ccc;
+}
+
+#post_title {
+  font-style: italic;
+  font-size: 120%;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #ccc;
 }

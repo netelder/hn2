@@ -21,14 +21,14 @@
 <body>
   <div id="nav_bar">
     <nav id="nav">
-      <div id="home"><a href='/'>Home</a></div>
+      <div id="home"><a href='/'>home</a></div>
       <div id="comments"><a href='/comments'>comments</a></div>
       <div id="submit"><a href='/posts/new'>submit</a></div>
       <% unless logged_in? %>
         <div id="login"><a href='/login'>login</a></div>
         <% else %>
-        <div id="username"><a href='/profile'><%= @current_user.username %></a></div>
         <div id="logout"><a href='/logout'>logout</a></div>
+        <div id="username"><a href='/profile'><%= @current_user.username %></a></div>
       <% end %>
     </nav>
   </div>
